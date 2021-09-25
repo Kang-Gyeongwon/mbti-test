@@ -1,11 +1,4 @@
-/*
-  App.js
-
-  루트 컴포넌트로써, 시작화면, 질문화면, 결과화면을 모두
-  품어주는 역할!
-
-*/
-import React from 'react'
+import React, { useState } from 'react'
 import Home from './components/Home'
 import Game from './components/Game'
 
@@ -15,27 +8,19 @@ const container = {
   alignItems: "center"
 }
 
-class App extends React.Component{
-  constructor(props){
-    super(props)
-    // 사용자가 시작했는지 여부를 나타내는 상태
-    this.state = {
-      begin: false 
-    }
+const App = () => {
+  const [name, setName] = useState("")
+  const [begin, setBegin] = useState(false)
+  
+  const handleStartTest = name => { 
+    setBegin(true) 
+    setName(name)
   }
+  const handleResetTest = () => { setBegin(false) }
 
-  // 이 컴포넌트의 상태 begin을 바꿀 수 있는 메소드
-  goTest = () => { this.setState({ begin : true }) }
-  goFirst = () => { this.setState({ begin : false }) }
-
-  render(){
-    return <div style={container}>
-      {
-        this.state.begin ? <Game goFirst={this.goFirst} />:
-        <Home goTest={this.goTest} />
-      }
-    </div>
-  }
+  return <div style={container}>
+    {begin ? <Game onResetTest={handleResetTest} name={name} /> : <Home onStartTest={handleStartTest} begin={setBegin} />}
+  </div>
 }
 
-export default App;
+export default App

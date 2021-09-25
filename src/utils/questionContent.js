@@ -1,6 +1,3 @@
-/* 
-12개의 질문에 대한 데이터를 보관하는 배열!
-*/
 export const questionContent = [
   {
     number: 1,
