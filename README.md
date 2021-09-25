@@ -6,7 +6,7 @@
 [https://mbti-perfume-kang.netlify.app](https://mbti-perfume-kang.netlify.app)
 
 ### 기술 스택
-- React 클래스 기반 컴포넌트 학습
+- React 함수 기반 컴포넌트 학습
 - Styled-components 를 사용하여 스타일 적용하기
     - 계속적으로 사용해야되는 버튼이나 메인이 되는 페이지를 컴포넌트 단위로 스타일을 적용하기 위해서 styled-components를 이용하였습니다.
 - PC환경에 맞추어 작업, 모바일 화면 반응 미제공
